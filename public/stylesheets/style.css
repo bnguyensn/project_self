@@ -1,0 +1,27 @@
+/* Main page */
+
+body {
+    padding: 50px;
+    font: 14px 'Open Sans', sans-serif;
+}
+
+a {
+    color: #00B7FF;
+}
+
+/* Specific items */
+
+#main-container {
+    text-align: center;
+}
+
+.main-button {
+    display: inline-block;
+    width: 150px; height: 150px;
+    margin: 15px;
+    text-align: center;
+}
+
+.main-button span {
+    padding-top: 5px; padding-bottom: 5px;
+}

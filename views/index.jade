@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h1= title
+    p
+        |Welcome to #{title}
+        |The quick brown fox jumps over the lazy sheep.
+    div#main-container
+        div.main-button(style='background-color: #66bb6a')
+            span About
+        div.main-button(style='background-color: #ffca28')
+            span Projects
+        div.main-button(style='background-color: #ef5350')
+            span Contact
