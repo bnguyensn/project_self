@@ -12,6 +12,7 @@
     "express": "~4.14.x",
     "jade": "~1.11.0",
     "morgan": "~1.7.0",
+    "path": "~0.12.x",
     "serve-favicon": "~2.3.0"
   }
 }
