@@ -1,15 +1,17 @@
 extends layout
 
 block content
-    h1= title
-    p
-        |Welcome to #{title}
-        |The quick brown fox jumps over the lazy sheep.
-        |Hello world.
-    div#main-container
-        div.main-button(style='background-color: #66bb6a')
-            span About
-        div.main-button(style='background-color: #ffca28')
-            span Projects
-        div.main-button(style='background-color: #ef5350')
-            span Contact
+    header#header
+        nav#nav-primary
+            a(href='/') Home
+            a(href='/about') About
+            a(href='/projects') Projects
+            a(href='/contact') Contact
+        div.headerfbox
+        div#title
+            =title
+    div#main-content
+        |So people coming here often ask: what's a "reever"?
+        br
+        |Read on and you'll find the answer.
+    footer#footer
