@@ -1,17 +1,23 @@
 extends layout
 
+block custom-stylesheets
+    link(rel='stylesheet', href='stylesheets/index.css')
+block custom-js
+    script(src='/javascripts/index.js')
+
 block content
     header#header
-        nav#nav-primary
-            a(href='/') Home
-            a(href='/about') About
-            a(href='/projects') Projects
-            a(href='/contact') Contact
-        div.headerfbox
-        div#title
-            =title
+        .wrapper.row
+            nav#nav-primary.row.col-6
+                .col-3: a(href='/') Home
+                .col-3: a(href='/about') About
+                .col-3: a(href='/projects') Projects
+                .col-3: a(href='/contact') Contact
+            .col-3(style='min-height: 1px;')
+            #title.col-3: =title
     div#main-content
-        |So people coming here often ask: what's a "reever"?
-        br
-        |Read on and you'll find the answer.
+        .wrapper
+            |So people coming here often ask: what's a "reever"?
+            br
+            |Read on and you'll find the answer.
     footer#footer

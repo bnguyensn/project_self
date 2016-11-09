@@ -2,6 +2,12 @@
 /* Main page */
 /* ========= */
 
+/* Makes padding and border are included in the total width and height of elements */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     background-color: #f5f5f5;
@@ -13,22 +19,72 @@ a {
     text-decoration: none;
 }
 
+/* Responsive Web Design with 3 columns */
+/* Each row should be wrapped in a <div> */
+/* The sum of columns inside a row should add up to 12 */
+
+/* Prevent other elements from ignoring the columns' flow within the page */
+
+.row::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+/* Mobile first */
+
+[class*='col-'] {
+    width: 100%;
+    float: left;
+}
+
+/* Half-screen desktop/tablet second */
+
+@media only screen and (min-width: 768px) {
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
+
+/* Large desktop third */
+
+@media only screen and (min-width: 960px) {
+    .wrapper {
+        width: 960px;
+    }
+}
+
 /* ============== */
 /* Specific items */
 /* ============== */
 
+/* Wrapper */
+/* This class exists to center content horizontally when the screen is large */
+
+.wrapper {
+    margin: 0 auto;
+}
+
 /* Header */
 
 #header {
-    display: -webkit-flex;
-    display: flex;
-    background-color: #000000;
+    background-color: #212121;
     padding: 20px;
+    text-align: center;
 }
 
 #nav-primary {
     font-size: 20px;
-    color: #ffffff;
+    color: #fafafa;
 }
 
 #nav-primary:before {
@@ -41,22 +97,16 @@ a {
 #nav-primary a {
     display: inline-block;
     padding: 0 10px 0 10px;
-    color: #ffffff;
+    color: #fafafa;
 }
 
 #nav-primary a:hover {
     color: #2196F3;
 }
 
-.headerfbox {
-    -webkit-flex: 1;
-    flex: 1;
-}
-
 #title {
-    float: right;
-    font-size: 40px;
-    color: #ffffff;
+    font-size: 20px;
+    color: #66bb6a;
 }
 
 /* Main Content */
@@ -64,3 +114,23 @@ a {
 #main-content {
     padding: 40px;
 }
+
+/* ======== */
+/* Snippets */
+/* ======== */
+
+/* Google's material design icon guidelines */
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
