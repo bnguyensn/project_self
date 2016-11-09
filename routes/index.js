@@ -8,7 +8,11 @@ router.get('/', function (req, res, next) {
     var headers = req.headers;
     var userAgent = headers['user-agent'];
 
-    res.render('index', {title: 'Just A Reever'});
+    res.render('index', {
+        title: 'Binh Nguyen',
+        description: "Just A Reever is Binh Nguyen's personal website.",
+        keywordlist: "binh, nguyen, bnguyensn, london, uk, hanoi, vietnam, creative, learning, fun"}
+    );
 });
 
 module.exports = router;
