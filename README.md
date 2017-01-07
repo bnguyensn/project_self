@@ -1,7 +1,7 @@
 #Captain's log
 
 ##07 January 2017
-* Reached conclusion on autohiding sidebar. The sidebar now hides on window.resize and window.click
+* Reached conclusion on autohiding the navigation menu for mobile. The menu now hides on window.resize and window.click, in addition to the normal clicking-the-menu-button method.
 
 ##01 November 2016
 
