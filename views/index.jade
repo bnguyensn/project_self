@@ -7,7 +7,13 @@ block custom-js
 
 block content
     header#header
-        .wrapper.row
+        #header-mobile.wrapper.mobile-show
+            div.text-left: a(href='/'): i.material-icons.md-24 &#xE88A;
+            div.text-right
+                a#btn-menu(href='#')
+                    i#btn-menu-open.material-icons.md-24 &#xE5D2;
+                    i#btn-menu-close.material-icons.md-24.hidden &#xE14C;
+        #header-desktop.wrapper.row.mobile-hide
             nav#nav-primary.row.col-6
                 .col-3: a(href='/') Home
                 .col-3: a(href='/about') About
@@ -15,9 +21,14 @@ block content
                 .col-3: a(href='/contact') Contact
             .col-3(style='min-height: 1px;')
             #title.col-3: =title
+    nav#nav-overlay-m.row.hidden
+        .col-12: a(href='/') Home
+        .col-12: a(href='/about') About
+        .col-12: a(href='/projects') Projects
+        .col-12: a(href='/contact') Contact
     div#main-content
         .wrapper
-            |So people coming here often ask: what's a "reever"?
+            |Hello and welcome to my site,
             br
-            |Read on and you'll find the answer.
+            |Here you can find out a bit about me, and my current projects.
     footer#footer
