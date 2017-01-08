@@ -149,33 +149,38 @@ a {
 
 #header-desktop {
     height: 20px;
+
+    line-height: 20px;
+    /* Setting line-height to >= font-size will vertically align single-line inline elements */
+
+    font-size: 18px;
 }
 
-#nav-primary {
-    font-size: 20px;
+#title {
+    color: #66bb6a;
+}
+
+/* Nav Bar (Desktop) */
+
+#nav-d {
     color: #fafafa;
 }
 
-#nav-primary:before {
+/*#nav-d:before {  // 08/01/2017: Don't know what this relates to...
     content: '';
     display: inline-block;
     vertical-align: middle;
     height: 100%;
-}
+}*/
 
-#nav-primary a {
+#nav-d a {
     display: inline-block;
     padding: 0 10px 0 10px;
     color: #fafafa;
 }
 
-#nav-primary a:hover {
+#nav-d a:hover {
     color: #2196F3;
-}
-
-#title {
-    font-size: 20px;
-    color: #66bb6a;
 }
 
 /* Main Content */

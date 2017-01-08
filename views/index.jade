@@ -14,13 +14,13 @@ block content
                     i#btn-menu-open.material-icons.md-24 &#xE5D2;
                     i#btn-menu-close.material-icons.md-24.hidden &#xE14C;
         #header-desktop.wrapper.row.mobile-hide
-            nav#nav-primary.row.col-6
-                .col-3: a(href='/') Home
+            #title.col-3: =title
+            .col-3(style='min-height: 1px;')
+            nav#nav-d.row.col-6
                 .col-3: a(href='/about') About
+                .col-3: a(href='/about') Blog
                 .col-3: a(href='/projects') Projects
                 .col-3: a(href='/contact') Contact
-            .col-3(style='min-height: 1px;')
-            #title.col-3: =title
     nav#nav-overlay-m.row.hidden
         .col-12: a(href='/') Home
         .col-12: a(href='/about') About
@@ -29,6 +29,7 @@ block content
     div#main-content
         .wrapper
             |Hello and welcome to my site,
+            br
             br
             |Here you can find out a bit about me, and my current projects.
     footer#footer
