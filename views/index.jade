@@ -6,30 +6,8 @@ block custom-js
     script(src='/javascripts/index.js')
 
 block content
-    header#header
-        #header-mobile.wrapper.mobile-show
-            div.text-left: a(href='/'): i.material-icons.md-24 &#xE88A;
-            div.text-right
-                a#btn-menu(href='#')
-                    i#btn-menu-open.material-icons.md-24 &#xE5D2;
-                    i#btn-menu-close.material-icons.md-24.hidden &#xE14C;
-        #header-desktop.wrapper.row.mobile-hide
-            #title.col-3: =title
-            .col-3(style='min-height: 1px;')
-            nav#nav-d.row.col-6
-                .col-3: a(href='/about') About
-                .col-3: a(href='/about') Blog
-                .col-3: a(href='/projects') Projects
-                .col-3: a(href='/contact') Contact
-    nav#nav-overlay-m.row.hidden
-        .col-12: a(href='/') Home
-        .col-12: a(href='/about') About
-        .col-12: a(href='/projects') Projects
-        .col-12: a(href='/contact') Contact
-    div#main-content
-        .wrapper
-            |Hello and welcome to my site,
-            br
-            br
-            |Here you can find out a bit about me, and my current projects.
-    footer#footer
+    div#main-content.wrapper
+        |Hello and welcome to my site,
+        br
+        br
+        |Here you can find out a bit about me, and my current projects.

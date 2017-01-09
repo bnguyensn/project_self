@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-/* GET home page. */
+/* GET home page */
 router.get('/', function (req, res, next) {
     const method = req.method;
     const url = req.url;
@@ -10,9 +10,19 @@ router.get('/', function (req, res, next) {
 
     res.render('index', {
         title: 'Binh Nguyen',
-        description: "Just A Reever is Binh Nguyen's personal website.",
-        keywordlist: "binh, nguyen, bnguyensn, london, uk, hanoi, vietnam, creative, learning, fun"}
-    );
+        description: "Binh Nguyen's personal website",
+        keywordlist: "binh, nguyen, binhnguyen, bnguyensn, london, uk, hanoi, vietnam, creative, learning, fun"
+    });
+});
+
+/* GET something else */
+
+router.get('/projects', function(req, res, next) {
+    res.render('projects', {
+        title: 'Projects',
+        description: "A list of Binh Nguyen's projects",
+        keywordlist: "binh, nguyen, projects"
+    });
 });
 
 module.exports = router;

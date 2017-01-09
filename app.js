@@ -56,7 +56,6 @@ app.use(function(err, req, res, next) {
     });
 });
 
-
 module.exports = app;
 
 const portNo = 63343;
