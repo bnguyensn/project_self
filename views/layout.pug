@@ -8,9 +8,11 @@ html
         meta(name='keywords', content=keywordlist)
         link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open+Sans')
         link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
-        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='stylesheet', href='/stylesheets/main.css')
         block custom-stylesheets
         script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+        script(src='https://unpkg.com/vue/dist/vue.js')
+        // Note: vue.min.js should be used for production.
         script(src='/javascripts/main.js')
         block custom-js
 
@@ -23,7 +25,7 @@ html
                         i#btn-menu-open.material-icons.md-24 &#xE5D2;
                         i#btn-menu-close.material-icons.md-24.hidden &#xE14C;
             #header-desktop.wrapper.row.mobile-hide
-                #title.col-3: a(href='/'): |Binh Nguyen
+                #logo-title.col-3: a(href='/'): |Binh Nguyen
                 // TODO: replace the above with a logo
                 .col-3(style='min-height: 1px;')
                 nav#nav-d.row.col-6

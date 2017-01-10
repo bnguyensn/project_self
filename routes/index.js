@@ -25,4 +25,12 @@ router.get('/projects', function(req, res, next) {
     });
 });
 
+router.get('/projects/anagram', function(req, res, next) {
+    res.render('anagram', {
+        title: 'Anagram',
+        description: "A multi-word anagram solver",
+        keywordlist: "binh, nguyen, anagram"
+    });
+});
+
 module.exports = router;
