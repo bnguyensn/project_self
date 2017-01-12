@@ -1,7 +1,7 @@
 extends layout
 
 block custom-stylesheets
-    link(rel='stylesheet', href='stylesheets/anagram.css')
+    link(rel='stylesheet', href='/stylesheets/anagram.css')
 block custom-js
     //script(src='/javascripts/anagram.js') // See comments at the end on why the script is not put here
 
@@ -10,7 +10,6 @@ block content
         #app-title: |Anagram Solver
         #app-desc
             |A multi-word anagram solver. Not compatible with Internet Explorer 8 and below.
-        br
         br
         #anagram-app
             form
