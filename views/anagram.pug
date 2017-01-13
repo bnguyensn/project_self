@@ -3,20 +3,18 @@ extends layout
 block custom-stylesheets
     link(rel='stylesheet', href='/stylesheets/anagram.css')
 block custom-js
-    //script(src='/javascripts/anagram.js') // See comments at the end on why the script is not put here
+    script(src='/javascripts/anagram.js')
 
 block content
     #main-content.wrapper
-        #app-title: |Anagram Solver
+        #app-title: b: |Anagram Solver
         #app-desc
             |A multi-word anagram solver. Not compatible with Internet Explorer 8 and below.
         br
         #anagram-app
-            form
+            form(@submit.prevent)
                 |Text to run anagram solver on:
                 br
-                input#query-input(type='text', name='query', size='20', "v-model"='message')
-            |{{ message }}
-
-    // The script for this app is put at the end because it needs to dynamically manipulate some DOM elements
-    script(src='/javascripts/anagram.js')
+                input#query-input(type='text', name='query', size='20', v-model='queryMsg', @click='queryInputClicked')
+                input#query-submit(type='submit', value='Solve!', @click='queryAnagram')
+            |{{ resultMsg }}
