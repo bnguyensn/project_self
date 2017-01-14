@@ -1,9 +1,12 @@
 #app-title {
     font-size: 1.5em;
-    color: #BF360C;
+    color: #FF5722;
 }
 
 #query-input {
-    color: #9E9E9E;
+
 }
 
+#query-submit {
+    margin: 0 5px;
+}

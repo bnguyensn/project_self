@@ -12,9 +12,10 @@ block content
             |A multi-word anagram solver. Not compatible with Internet Explorer 8 and below.
         br
         #anagram-app
-            form(@submit.prevent)
+            form(@submit.prevent='queryAnagram')
                 |Text to run anagram solver on:
                 br
-                input#query-input(type='text', name='query', size='20', v-model='queryMsg', @click='queryInputClicked')
-                input#query-submit(type='submit', value='Solve!', @click='queryAnagram')
+                input#query-input(type='text', name='query', title='Alphabetical characters only. No spaces.', size='20', placeholder='Anagram to be solved...', maxlength='50', pattern='[A-Za-z]+', v-model='queryMsg', @click='qIClicked')
+                input#query-submit(type='submit', value='Solve!')
+            br
             |{{ resultMsg }}

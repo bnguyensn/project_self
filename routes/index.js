@@ -1,7 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
+// Custom server .js files
+const anagram = require('../server/anagram');
+
 /* GET home page */
+
 router.get('/', function (req, res, next) {
     const method = req.method;
     const url = req.url;
@@ -15,7 +19,7 @@ router.get('/', function (req, res, next) {
     });
 });
 
-/* GET something else */
+/* GET a page */
 
 router.get('/projects', function(req, res, next) {
     res.render('projects', {
@@ -29,8 +33,12 @@ router.get('/projects/anagram', function(req, res, next) {
     res.render('anagram', {
         title: 'Anagram',
         description: "A multi-word anagram solver",
-        keywordlist: "binh, nguyen, anagram"
+        keywordlist: "binh, nguyen, anagram",
     });
+});
+
+router.post('/projects/anagram', function(req, res, next) {
+    res.send(anagram.solveAnagram(req.body.query, req.body.multi));
 });
 
 module.exports = router;
