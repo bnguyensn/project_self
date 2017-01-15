@@ -19,7 +19,27 @@ router.get('/', function (req, res, next) {
     });
 });
 
-/* GET a page */
+/* GET About */
+
+router.get('/about', function(req, res, next) {
+    res.render('about', {
+        title: 'About',
+        description: "About Binh Nguyen",
+        keywordlist: "binh, nguyen, about"
+    });
+});
+
+/* GET Blog */
+
+router.get('/blog', function(req, res, next) {
+    res.render('blog', {
+        title: 'Blog',
+        description: "Binh Nguyen's articles.",
+        keywordlist: "binh, nguyen, blog, post, posts, article, articles, note, notes"
+    });
+});
+
+/* GET Projects */
 
 router.get('/projects', function(req, res, next) {
     res.render('projects', {
@@ -29,16 +49,26 @@ router.get('/projects', function(req, res, next) {
     });
 });
 
-router.get('/projects/anagram', function(req, res, next) {
-    res.render('anagram', {
-        title: 'Anagram',
-        description: "A multi-word anagram solver",
-        keywordlist: "binh, nguyen, anagram",
+router.route('/projects/anagram')
+    .get(function(req, res, next) {
+        res.render('anagram', {
+            title: 'Anagram',
+            description: "A multi-word anagram solver",
+            keywordlist: "binh, nguyen, anagram",
+        });
+    })
+    .post(function(req, res, next) {
+        res.send(anagram.solveAnagram(req.body.query, req.body.multi));
     });
-});
 
-router.post('/projects/anagram', function(req, res, next) {
-    res.send(anagram.solveAnagram(req.body.query, req.body.multi));
+/* GET Contact */
+
+router.get('/contact', function(req, res, next) {
+    res.render('contact', {
+        title: 'Contact',
+        description: "Information on contacting Binh Nguyen",
+        keywordlist: "binh, nguyen, contact"
+    });
 });
 
 module.exports = router;
