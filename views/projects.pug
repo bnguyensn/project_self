@@ -1,0 +1,17 @@
+extends layout
+
+block custom-stylesheets
+    link(rel='stylesheet', href='/stylesheets/projects.css')
+block custom-js
+    script(src='/javascripts/projects.js')
+
+block content
+    #main-content.wrapper
+        |Below is a showcase of my projects.
+        br
+        br
+        #project-showcase
+            ul.row
+                // TODO: Create icons for these
+                li.col-6: a(href='/projects/anagram'): |Anagram
+                li.col-6: a(href='/projects/yvfm'): |You vs. Famous People

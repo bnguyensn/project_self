@@ -1,0 +1,14 @@
+/* Project showcase box */
+
+#project-showcase {
+    border: 1px solid #212121;
+}
+
+#project-showcase ul {
+    list-style: none;
+    padding: 20px;
+}
+
+#project-showcase ul a {
+
+}
