@@ -12,5 +12,3 @@
 `nav-sidebar` currently autohides itself on screen resizing using jQuery. An event is called on window resize.
  
   A method of doing this using CSS might improve performance.
- 
- 

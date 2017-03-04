@@ -26,3 +26,6 @@ $RECYCLE.BIN/
 *.iml
 out
 gen
+
+# bnguyensn
+node_modules

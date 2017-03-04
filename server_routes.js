@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
+const path = require('path');
 
 // Custom server .js files
-const anagram = require('../server/anagram');
+// const anagram = require('server/anagram');
 
 /* GET home page */
 
-router.get('/', function (req, res, next) {
-    const method = req.method;
+router.get('/', (req, res, next) => {
+    /*const method = req.method;
     const url = req.url;
     const headers = req.headers;
     const userAgent = headers['user-agent'];
@@ -16,10 +17,20 @@ router.get('/', function (req, res, next) {
         title: 'Binh Nguyen',
         description: "Binh Nguyen's personal website",
         keywordlist: "binh, nguyen, binhnguyen, bnguyensn, london, uk, hanoi, vietnam, creative, learning, fun"
-    });
+    });*/
+
+    const options = {
+        root: './dist' // Directory root of the file being served
+    };
+    const fileName = 'home.html';
+    res.sendFile(fileName, options, (e) => {
+        (e) ? next(e) : console.log(`Served ${fileName}`);
+    })
 });
 
-/* GET About */
+/*
+
+/!* GET About *!/
 
 router.get('/about', function(req, res, next) {
     res.render('about', {
@@ -29,7 +40,7 @@ router.get('/about', function(req, res, next) {
     });
 });
 
-/* GET Blog */
+/!* GET Blog *!/
 
 router.get('/blog', function(req, res, next) {
     res.render('blog', {
@@ -39,7 +50,7 @@ router.get('/blog', function(req, res, next) {
     });
 });
 
-/* GET Projects */
+/!* GET Projects *!/
 
 router.get('/projects', function(req, res, next) {
     res.render('projects', {
@@ -61,7 +72,7 @@ router.route('/projects/anagram')
         res.send(anagram.solveAnagram(req.body.query, req.body.multi));
     });
 
-/* GET Contact */
+/!* GET Contact *!/
 
 router.get('/contact', function(req, res, next) {
     res.render('contact', {
@@ -70,5 +81,6 @@ router.get('/contact', function(req, res, next) {
         keywordlist: "binh, nguyen, contact"
     });
 });
+*/
 
 module.exports = router;
