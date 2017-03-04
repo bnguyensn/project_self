@@ -27,5 +27,4 @@ out
 gen
 
 # bnguyensn
-node_modules
-dist
+/node_modules/
