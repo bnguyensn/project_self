@@ -13,6 +13,7 @@
     "cookie-parser": "^1.4.x",
     "debug": "^2.x.x",
     "express": "^4.15.x",
+    "history": "^4.5.1",
     "lodash": "^4.17.4",
     "morgan": "^1.8.x",
     "path": "^0.12.x",

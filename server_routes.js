@@ -7,7 +7,7 @@ const path = require('path');
 
 /* GET home page */
 
-router.get('/', (req, res, next) => {
+router.get('*', (req, res, next) => {
     /*const method = req.method;
     const url = req.url;
     const headers = req.headers;

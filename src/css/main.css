@@ -17,7 +17,7 @@ a {
 
 .wrapper {
     /* Center content horizontally when the screen is large */
-    max-width: 414px; /* Breakpoint is 768px */
+    max-width: 768px; /* Breakpoint is 768px */
     margin: 0 auto; /* This center the class horizontally */
 }
 
@@ -35,9 +35,9 @@ a {
 
 /* Change the size of certain elements to fit different screens */
 
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 768px) {
     body {
-        font-size: 18px;
+
     }
 }
 

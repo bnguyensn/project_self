@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../css/content.css';
+import '../../css/home.css';
 
 function Greeting(props) {
     return (
@@ -8,7 +8,7 @@ function Greeting(props) {
             <br/>
             <br/>
             <span className="block text-justify">
-                Congratulations on finding my site!
+                Congratulations for finding my site!
                 Feel free to explore around and may you find what you need.
                 <br/>
                 <br/>
@@ -16,21 +16,21 @@ function Greeting(props) {
             </span>
             <br/>
             <br/>
-            <a className="block text-right" href="https://twitter.com/bnguyensn" target="blank">@bnguyensn</a>
+            <span className="block text-right">
+                <a href="https://twitter.com/bnguyensn" target="blank">@bnguyensn</a>
+            </span>
         </div>
     )
 }
 
-class Content extends Component {
+class Home extends Component {
     render() {
         return (
-            <div id="content-container">
-                <div className="wrapper" id="content">
-                    <Greeting />
-                </div>
+            <div>
+                <Greeting />
             </div>
         )
     }
 }
 
-export default Content
+export default Home

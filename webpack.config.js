@@ -123,7 +123,11 @@ module.exports = (env) => {
             ]
         },
         devServer: {
-            contentBase: './src'
+            port: 8080,
+            contentBase: './src',
+            historyApiFallback: {
+                index: 'index.html'
+            }
         },
         devtool: 'source-map'
     };

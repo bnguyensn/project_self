@@ -1,21 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Content from './content';
-import Header from './header';
-import Footer from './footer';
-import '../css/main.css';
+import {BrowserRouter as Router} from 'react-router-dom';
+import Main from './pages/main';
 
-// Render the header
+// Render the content with Router
 ReactDOM.render(
-    <Header />,
-    document.getElementById('root-header')
+    <Router>
+        <Main />
+    </Router>,
+    document.getElementById('root')
 );
-
-// Render the content
-ReactDOM.render(
-    <Content />,
-    document.getElementById('root-content')
-);
-
-// Render the footer
-// TODO

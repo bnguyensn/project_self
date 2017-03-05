@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
-import '../css/header.css';
+import {Route, Link} from 'react-router-dom';
+import '../../css/header.css';
 
 function NavBar(props) {
     return (
         <nav id="nav">
-            <span><a href="/projects">Projects</a></span>
-            <span><a href="/about">About</a></span>
+            <span><Link to="/projects">Projects</Link></span>
+            <span><Link to="/about">About</Link></span>
+            <span><Link to="/">@B</Link></span>
         </nav>
     )
 }
