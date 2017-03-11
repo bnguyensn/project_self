@@ -10,7 +10,7 @@ class Content extends Component {
     render() {
         return (
             <div id="content-container">
-                <div id="content" className="wrapper">
+                <div id="content">
                     <Switch>
                         <Route exact path="/" component={Home}/>
                         <Route path="/about" component={About}/>

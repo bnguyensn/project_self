@@ -3,7 +3,7 @@ import '../../css/home.css';
 
 function Greeting(props) {
     return (
-        <div id="greeting">
+        <div className="wrapper" id="greeting">
             <span className="block color-teal">Hello,</span>
             <br/>
             <br/>

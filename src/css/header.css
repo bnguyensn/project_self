@@ -19,7 +19,12 @@
     padding: 10px;
 }
 
-.header-a {color: #212121;}
+.header-a {
+    color: #212121;
+
+    /* Transition stuff */
+    transition: background-color .25s ease;
+}
 .header-a:hover {
     background-color: #E0E0E0; /* Grey 300 */
 }
