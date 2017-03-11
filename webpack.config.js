@@ -12,11 +12,13 @@ module.exports = (env) => {
     // Vendor packages
     const vendorPackages = [
         'lodash',
-        'react-router-dom'
+        'react-router-dom',
+        'react',
+        'react-dom'
     ];
     const vendorCDNPackages = {
-        'react': 'React',
-        'react-dom': 'ReactDOM'
+        /*'react': 'React',
+        'react-dom': 'ReactDOM'*/
     };
 
     // Loader constants
