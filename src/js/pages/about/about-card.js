@@ -24,16 +24,45 @@ class Narrative extends React.Component {
         this.handleDragStart = this.handleDragStart.bind(this);
     }
 
+    componentDidMount() {
+
+        // ===== REPOSITIONING ===== //
+        // An array of narrative containers
+        const allNarratives = document.getElementsByClassName('all-narrative-container');
+
+        // Adjust the position of each narrative container based on how many narratives it has
+        for(let i = 0; i < allNarratives.length; i++) {
+            const narrativeCount = allNarratives[i].childElementCount;
+            const translatedX = `${-(100 - 1/narrativeCount * 50)}%`;
+            allNarratives[i].style.transform = `translate(${translatedX}, 0)`
+        }
+    }
+
     handleDragStart(e) {
         e.preventDefault();
     }
 
     render() {
+        const narrativeObjs = Object.keys(this.props.narrative);
+        const narrativeItems = narrativeObjs.map((narrativeItem) => (
+            <div key={narrativeItem} className="narrative-container" draggable="true"
+                 onDragStart={this.handleDragStart}>
+                <span key={`${narrativeItem}-${this.props.narrative[narrativeItem].name}`}>
+                    {this.props.narrative[narrativeItem].name}
+                </span>
+                <span key={`${narrativeItem}-${this.props.narrative[narrativeItem].year}`}>
+                    {this.props.narrative[narrativeItem].year}
+                </span>
+                <span key={`${narrativeItem}-${this.props.narrative[narrativeItem].narrative}`}>
+                    {this.props.narrative[narrativeItem].narrative}
+                </span>
+            </div>
+        ));
         return (
-            <div className="narrative-container" draggable="true" onDragStart={this.handleDragStart}>
-                <span>{this.props.name}</span>
-                <span>{this.props.year}</span>
-                <span>{this.props.narrative}</span>
+            <div className="narrative-viewbox">
+                <div className="all-narrative-container">
+                    {narrativeItems}
+                </div>
             </div>
         )
     }
@@ -44,11 +73,7 @@ class AboutCard extends Component {
         return (
             <div className="about-card-container">
                 <Logo logo={this.props.logo}/>
-                <Narrative
-                    name={this.props.name}
-                    year={this.props.year}
-                    narrative={this.props.narrative}
-                />
+                <Narrative narrative={this.props.narrative}/>
             </div>
         )
     }

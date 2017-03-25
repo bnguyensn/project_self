@@ -16,6 +16,24 @@ const symbolWork = {
     "viewBox": "0 0 28 28"
 };
 
+const narrativeEdu = {
+    "edu1": {
+        "name": "Chichester College",
+        "year": "2008 - 2010",
+        "narrative": "A-Levels"
+    },
+    "edu2": {
+        "name": "University of Southampton",
+        "year": "2010 - 2013",
+        "narrative": "Economics & Finance"
+    },
+    "edu3": {
+        "name": "The Institute of Chartered Accountants in England and Wales",
+        "year": "2014 - 2017",
+        "narrative": "Chartered Accountant"
+    }
+};
+
 class About extends Component {
     render() {
         return (
@@ -23,17 +41,9 @@ class About extends Component {
                 <AboutCard
                     bkgColor="#4FC3F7" /* Light Blue 300 */
                     logo={symbolEdu}
-                    name="University of Southampton"
-                    year="2010 - 2013"
-                    narrative="Economics & Finance"
+                    narrative={narrativeEdu}
                 />
-                <AboutCard
-                    bkgColor="#7986CB" /* Indigo 300 */
-                    logo={symbolWork}
-                    name="PwC UK"
-                    year="2014 - Current"
-                    narrative="Assurance - Insurance & Investment Management"
-                />
+
             </div>
         )
     }

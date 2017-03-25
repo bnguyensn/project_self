@@ -21,6 +21,11 @@ a {
     margin: 0 auto; /* This center the class horizontally */
 }
 
+#root {
+    /* Everything won't go below 280px */
+    min-width: 280px;
+}
+
 .hidden {display: none;}
 .block {display: block;}
 .inline-block {display: inline-block;}
