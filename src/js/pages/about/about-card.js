@@ -15,6 +15,41 @@ function Logo(props) {
     )
 }
 
+class NavBtn extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            count: 0
+        };
+
+        // Make 'this' works in the callback
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        this.state.count += 1;
+        console.log(this.state.count);
+
+
+    }
+
+    render() {
+        let positionStyle = {};
+        let navIcon = <i className="material-icons">&#xE5CB;</i>;
+        if (this.props.positionRight) {
+            positionStyle = {
+                left: '100%',
+                transform: 'translate(-100%, 0)'
+            };
+            navIcon = <i className="material-icons">&#xE5CC;</i>
+        }
+        return (
+            <div className="narrative-viewbox-navbtn" style={positionStyle} onClick={this.handleClick}>
+                {navIcon}
+            </div>
+        )
+    }
+}
 
 class Narrative extends React.Component {
     constructor(props) {
@@ -31,9 +66,9 @@ class Narrative extends React.Component {
         const allNarratives = document.getElementsByClassName('all-narrative-container');
 
         // Adjust the position of each narrative container based on how many narratives it has
-        for(let i = 0; i < allNarratives.length; i++) {
+        for (let i = 0; i < allNarratives.length; i++) {
             const narrativeCount = allNarratives[i].childElementCount;
-            const translatedX = `${-(100 - 1/narrativeCount * 50)}%`;
+            const translatedX = `${-(100 - 1 / narrativeCount * 50)}%`;
             allNarratives[i].style.transform = `translate(${translatedX}, 0)`
         }
     }
@@ -60,9 +95,11 @@ class Narrative extends React.Component {
         ));
         return (
             <div className="narrative-viewbox">
+                <NavBtn />
                 <div className="all-narrative-container">
                     {narrativeItems}
                 </div>
+                <NavBtn positionRight={true}/>
             </div>
         )
     }

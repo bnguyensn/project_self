@@ -31,6 +31,9 @@
 /* ===== NARRATIVE ===== */
 
 .narrative-viewbox {
+    /* Its children needs positioning */
+    position: relative;
+
     /* Centers and limits the size of the viewbox */
     margin: 0 auto;
     max-width: 400px;
@@ -38,6 +41,23 @@
     /* Clip the contents of narratives */
     overflow: hidden;
     white-space: nowrap;
+}
+
+.narrative-viewbox-navbtn {
+    /* The nav button should appear on top of the viewbox */
+    position: absolute;
+    height: 100%;
+    z-index: 1;
+
+    /* The "logo" of the nav button should be centered */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Misc. styling */
+    cursor: pointer;
+    user-select: none;
+    background-color: #9E9E9E; /* Grey 500 */
 }
 
 .all-narrative-container {
