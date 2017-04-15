@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {Route, Link, Switch} from 'react-router-dom';
-import Home from './home';
-import About from './about';
-import Projects from './projects';
-import PageNotFound from './pagenotfound';
-import '../../css/content.css';
+import Home from './home/home';
+import About from './about/about';
+import Projects from './projects/projects';
+import PageNotFound from './404';
+import '../css/content.css';
 
 class Content extends Component {
     render() {

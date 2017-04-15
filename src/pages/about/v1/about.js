@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import AboutCard from './about/about-card';
-import '../../css/about.css';
+import AboutCard from './about-card';
+import './about.css';
 
 // SVG symbol parameters
 
@@ -39,6 +39,7 @@ class About extends Component {
         return (
             <div>
                 <AboutCard
+                    id="about-card-edu"
                     bkgColor="#4FC3F7" /* Light Blue 300 */
                     logo={symbolEdu}
                     narrative={narrativeEdu}

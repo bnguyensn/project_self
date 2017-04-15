@@ -1,0 +1,146 @@
+{
+  "javascript": {
+    "type": "love",
+    "title": "JavaScript",
+    "description": "I love Javascript. It's a fun language, but can be frustrating sometimes.",
+    "iconFile": "javascript.png",
+    "color": "",
+    "backgroundColor": "",
+    "rank": -1
+  },
+  "internet": {
+    "type": "love",
+    "title": "The Internet",
+    "description": "I love the Internet. Tis' a strange place.",
+    "iconFile": "internet.png",
+    "color": "",
+    "backgroundColor": "",
+    "rank": -1
+  },
+  "cinema": {
+    "type": "love",
+    "title": "The Cinema",
+    "description": "I love going to the cinema. Favorite 3 actors: DiCaprio, Jackman, and Gordon-Levitt. Favorite 3 actresses: Johansson, Blanchett, and Kendrick",
+    "iconFile": "internet.png",
+    "color": "",
+    "backgroundColor": "",
+    "rank": -1
+  },
+  "netflix": {
+    "type": "love",
+    "title": "Netflix",
+    "description": "I love Netflix. Though it's hard to find time to watch it nowadays.",
+    "iconFile": "internet.png",
+    "color": "",
+    "backgroundColor": "",
+    "rank": -1
+  },
+  "cats": {
+    "type": "love",
+    "title": "Cats",
+    "description": "I love cats! Dogs come to a close second though.",
+    "iconFile": "internet.png",
+    "color": "",
+    "backgroundColor": "",
+    "rank": -1
+  },
+  "space": {
+    "type": "love",
+    "title": "Space",
+    "description": "I love space and the universe beyond. They can be stunningly beautiful, but haunting at the same time.",
+    "iconFile": "internet.png",
+    "color": "",
+    "backgroundColor": "",
+    "rank": -1
+  },
+  "books": {
+    "type": "love",
+    "title": "Books",
+    "description": "I love books. Someone said that if you don't read, you will only live one life. But if you do, you will live a thousand...",
+    "iconFile": "internet.png",
+    "color": "",
+    "backgroundColor": "",
+    "rank": -1
+  },
+  "games": {
+    "type": "love",
+    "title": "Games",
+    "description": "I love games, especially those with a good story. Also r/pcmasterrace. Bite me.",
+    "iconFile": "internet.png",
+    "color": "",
+    "backgroundColor": "",
+    "rank": -1
+  },
+  "friends": {
+    "type": "love",
+    "title": "My Friends & Family",
+    "description": "I love my friends and family. Quite lucky to have them.",
+    "iconFile": "internet.png",
+    "color": "",
+    "backgroundColor": "",
+    "rank": -1
+  },
+  "website": {
+    "type": "done",
+    "title": "My Very Own Website",
+    "description": "I created my very own website. From scratch. It runs on NodeJS, React, and nights of sleeplessness.",
+    "iconFile": "internet.png",
+    "color": "",
+    "backgroundColor": "",
+    "rank": -1
+  },
+  "vegas": {
+    "type": "done",
+    "title": "Vegas",
+    "description": "I have been to Vegas. It's a very fun city for those with excessive energy and cash.",
+    "iconFile": "internet.png",
+    "color": "",
+    "backgroundColor": "",
+    "rank": -1
+  },
+  "aca": {
+    "type": "done",
+    "title": "The ACA",
+    "description": "I have done the ACA. Passed all 15 exams first time. Would not do again.",
+    "iconFile": "internet.png",
+    "color": "",
+    "backgroundColor": "",
+    "rank": -1
+  },
+  "degree": {
+    "type": "done",
+    "title": "A Degree",
+    "description": "I got a 2.1 in Economics & Finance from the University of Southampton back in 2013. You know when people say university time is fun and fly by fast, they are not lying.",
+    "iconFile": "internet.png",
+    "color": "",
+    "backgroundColor": "",
+    "rank": -1
+  },
+  "boat": {
+    "type": "want",
+    "title": "A Boat",
+    "description": "Let's be honest here. You too also want a boat.",
+    "iconFile": "internet.png",
+    "color": "",
+    "backgroundColor": "",
+    "rank": -1
+  },
+  "antarctica": {
+    "type": "want",
+    "title": "Visit Antarctica",
+    "description": "I think it's a very cool thing to do.",
+    "iconFile": "internet.png",
+    "color": "",
+    "backgroundColor": "",
+    "rank": -1
+  },
+  "12 books": {
+    "type": "want",
+    "title": "Read 1 Book a Month",
+    "description": "This is one of my resolution. If I succeed, you will find this getting moved from here to the 'Done' category.",
+    "iconFile": "internet.png",
+    "color": "",
+    "backgroundColor": "",
+    "rank": -1
+  }
+}

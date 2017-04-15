@@ -18,19 +18,13 @@ function Logo(props) {
 class NavBtn extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            count: 0
-        };
 
         // Make 'this' works in the callback
         this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick() {
-        this.state.count += 1;
-        console.log(this.state.count);
-
-
+        this.props.moveNBar(this.props.positionRight);
     }
 
     render() {
@@ -51,26 +45,12 @@ class NavBtn extends React.Component {
     }
 }
 
-class Narrative extends React.Component {
+class NarrativeBar extends React.Component {
     constructor(props) {
         super(props);
 
         // Make 'this' works in the callback
         this.handleDragStart = this.handleDragStart.bind(this);
-    }
-
-    componentDidMount() {
-
-        // ===== REPOSITIONING ===== //
-        // An array of narrative containers
-        const allNarratives = document.getElementsByClassName('all-narrative-container');
-
-        // Adjust the position of each narrative container based on how many narratives it has
-        for (let i = 0; i < allNarratives.length; i++) {
-            const narrativeCount = allNarratives[i].childElementCount;
-            const translatedX = `${-(100 - 1 / narrativeCount * 50)}%`;
-            allNarratives[i].style.transform = `translate(${translatedX}, 0)`
-        }
     }
 
     handleDragStart(e) {
@@ -93,13 +73,62 @@ class Narrative extends React.Component {
                 </span>
             </div>
         ));
+        return(
+            <div className="all-narrative-container">
+                {narrativeItems}
+            </div>
+        )
+    }
+}
+
+class NarrativeViewBox extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            nBPos: 0,
+            nBPosMax: 0,
+            nBMoveDist: 0
+        };
+
+        // Make 'this' works in the callback
+        this.moveNarrativeBar = this.moveNarrativeBar.bind(this);
+    }
+
+    componentDidMount() {
+
+        // ===== INITIAL POSITIONING ===== //
+        const narrativeBar = document.querySelector(`div#${this.props.id} div.all-narrative-container`);
+        const narrativeCount = narrativeBar.childElementCount;
+        this.setState({
+            nBPos: (narrativeCount * 2) - 1,
+            nBPosMax: (narrativeCount * 2) - 1,
+            nBMoveDist: (100 / narrativeCount) / 2
+        });
+
+    }
+
+    componentDidUpdate() {
+
+        // Runs after a render / re-render / setState
+        const narrativeBar = document.querySelector(`div#${this.props.id} div.all-narrative-container`);
+        narrativeBar.style.transform = `translate(-${this.state.nBMoveDist * this.state.nBPos}%, 0)`;
+    }
+
+    moveNarrativeBar(moveRight) {
+        let movement;
+        moveRight ?
+            movement = Math.min(this.state.nBPos + 2, this.state.nBPosMax) :
+            movement = Math.max(this.state.nBPos - 2, 1);
+        this.setState({nBPos: movement});
+    }
+
+    render() {
         return (
             <div className="narrative-viewbox">
-                <NavBtn />
-                <div className="all-narrative-container">
-                    {narrativeItems}
-                </div>
-                <NavBtn positionRight={true}/>
+                <NavBtn moveNBar={this.moveNarrativeBar}/>
+                <NarrativeBar narrative={this.props.narrative}/>
+                <NavBtn positionRight={true} moveNBar={this.moveNarrativeBar}/>
             </div>
         )
     }
@@ -108,9 +137,9 @@ class Narrative extends React.Component {
 class AboutCard extends Component {
     render() {
         return (
-            <div className="about-card-container">
+            <div className="about-card-container" id={this.props.id}>
                 <Logo logo={this.props.logo}/>
-                <Narrative narrative={this.props.narrative}/>
+                <NarrativeViewBox id={this.props.id} narrative={this.props.narrative}/>
             </div>
         )
     }

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Route, Link} from 'react-router-dom';
-import '../../css/header.css';
+import '../css/header.css';
 
 const HeaderLink = ({to, exact, label}) => (
     <Route exact={exact} path={to} children={({match}) => (

@@ -1,0 +1,90 @@
+/* ===== PAGE ===== */
+
+#about-content {
+    padding: 10px;
+}
+
+/* ===== INFO CARD GROUPS */
+
+.ic-group {
+    /* This is the container for each info card group */
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.ic-group span {
+    display: block;
+    margin: 10px 0;
+    width: 100%;
+    font-size: 200%;
+}
+
+/* ===== INFO CARDS ===== */
+
+.ic-container {
+    /* This is the container for each info card */
+    margin: 5px 2%;
+    width: 100%;
+    border-radius: 5px;
+
+    color: #212121; /* Grey 900 */
+
+    display: inline-flex;
+
+    overflow: auto; /* This makes the container expand accordingly with its children */
+    cursor: pointer;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .ic-container {
+        margin: 5px 1%;
+        width: 48%;
+
+    }
+}
+
+.ic-icon {
+    display: inline-block;
+    margin: 5px;
+}
+
+.ic-icon img {
+    width: 64px; height: 64px;
+}
+
+.ic-textBoxes {
+    display: inline-block;
+    margin: 5px;
+
+    overflow: hidden; /* This makes the container expand accordingly with its children */
+}
+
+.ic-title {
+    margin-bottom: 5px;
+    min-height: 64px;
+
+    font-size: 125%;
+
+    display: flex;
+    align-items: center;
+}
+
+.ic-description {
+    margin-top: 5px;
+}
+
+.ic-love {
+    background-color: #F8BBD0; /* Pink 100 */
+}
+
+.ic-done {
+    background-color: #C8E6C9; /* Green 100 */
+}
+
+.ic-want {
+    background-color: #BBDEFB; /* Blue 100 */
+}

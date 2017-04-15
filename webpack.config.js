@@ -26,7 +26,7 @@ module.exports = (env) => {
 
     return {
         entry: {
-            app: './src/js/index.js',
+            app: './src/index.js',
             vendor: vendorPackages
         },
         externals: vendorCDNPackages,
@@ -90,7 +90,9 @@ module.exports = (env) => {
         },
         plugins: [
             // UglifyJS
-            new webpack.optimize.UglifyJsPlugin({}),
+            new webpack.optimize.UglifyJsPlugin({
+                sourceMap: true
+            }),
             // CommonsChunk
             new webpack.optimize.CommonsChunkPlugin({
                 name: 'vendor',
