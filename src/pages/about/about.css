@@ -1,21 +1,25 @@
 /* ===== PAGE ===== */
 
 #about-content {
-    padding: 10px;
+
 }
 
 /* ===== INFO CARD GROUPS */
 
-.ic-group {
-    /* This is the container for each info card group */
-    margin-bottom: 20px;
+#ic-group-love { background: url('./bkg/pink_rice.png') repeat; }
+#ic-group-done { background: url('./bkg/green_dust_scratch.png') repeat; }
+#ic-group-want { background: url('./bkg/weather.png') repeat; }
+
+
+.ic-group > div {
+    padding: 10px;
 
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
 }
 
-.ic-group span {
+.ic-group-title {
     display: block;
     margin: 10px 0;
     width: 100%;
@@ -30,26 +34,23 @@
     width: 100%;
     border-radius: 5px;
 
-    color: #212121; /* Grey 900 */
-
     display: inline-flex;
 
     overflow: auto; /* This makes the container expand accordingly with its children */
-    cursor: pointer;
-    user-select: none;
 }
 
 @media (min-width: 768px) {
     .ic-container {
         margin: 5px 1%;
         width: 48%;
-
     }
 }
 
 .ic-icon {
     display: inline-block;
     margin: 5px;
+
+    cursor: pointer;
 }
 
 .ic-icon img {
@@ -58,7 +59,9 @@
 
 .ic-textBoxes {
     display: inline-block;
-    margin: 5px;
+    margin: 5px 5px 10px 5px;
+
+    color: #fafafa; /* Grey 50 */
 
     overflow: hidden; /* This makes the container expand accordingly with its children */
 }
@@ -67,24 +70,22 @@
     margin-bottom: 5px;
     min-height: 64px;
 
-    font-size: 125%;
+    font: 133% 'Open Sans', sans-serif;
 
     display: flex;
     align-items: center;
+
+    cursor: pointer;
+    user-select: none;
 }
 
 .ic-description {
-    margin-top: 5px;
+    font-size: 100%;
+
+    user-select: text;
+    cursor: auto;
 }
 
-.ic-love {
-    background-color: #F8BBD0; /* Pink 100 */
-}
-
-.ic-done {
-    background-color: #C8E6C9; /* Green 100 */
-}
-
-.ic-want {
-    background-color: #BBDEFB; /* Blue 100 */
-}
+.ic-love { background-color: #F06292; /* Pink 300 */ }
+.ic-done { background-color: #81C784; /* Green 300 */ }
+.ic-want { background-color: #64B5F6; /* Blue 300 */ }

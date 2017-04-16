@@ -53,12 +53,12 @@ class InfoCard extends Component {
 
     render() {
         return (
-            <div className={`ic-container ic-${this.props.data.type}`} onClick={this.toggleInfoCard}>
-                <div className="ic-icon">
+            <div className={`ic-container ic-${this.props.data.type}`}>
+                <div className="ic-icon" onClick={this.toggleInfoCard}>
                     <img src={require(`./icons/${this.props.data.iconFile}`)}/>
                 </div>
                 <div className="ic-textBoxes">
-                    <div className="ic-title">
+                    <div className="ic-title" onClick={this.toggleInfoCard}>
                         {this.props.data.title}
                     </div>
                     <div className="ic-description" ref={(descriptionDiv) => { this.descriptionDiv = descriptionDiv; }}>
@@ -79,27 +79,42 @@ class InfoCardGroup extends Component {
         );
     }
 
-    componentDidMount() {
-        // TODO: animate entrance
-    }
-
     render() {
         return (
-            <div className="ic-group">
-                <span>{this.props.groupTitle}</span>
-                {this.infoCardGroup}
+            <div className="ic-group" id={this.props.id}>
+                <div className="wrapper">
+                    <span className="ic-group-title">{this.props.groupTitle}</span>
+                    {this.infoCardGroup}
+                </div>
             </div>
         );
     }
 }
 
 class About extends Component {
+
+    /* We are handling animation here using DOM selectors
+       because we are trying to overuse React refs.
+     */
+    componentDidMount() {
+        const icGroupTitles = Array.prototype.slice.call(document.getElementsByClassName('ic-group-title'), 0);
+        const icContainers = Array.prototype.slice.call(document.getElementsByClassName('ic-container'), 0);
+        const animGroup = icGroupTitles.concat(icContainers), aGL = animGroup.length;
+        const animTimeEach = 1.5;
+        const animDelayEach = .05;
+        let animDelayAcc = 0;
+        for (let i = 0; i < aGL; i++) {
+            TweenLite.from(animGroup[i], animTimeEach, {opacity: 0, delay: animDelayAcc});
+            animDelayAcc += animDelayEach;
+        }
+    }
+
     render() {
         return (
-            <div className="wrapper" id="about-content">
-                <InfoCardGroup data={aboutObj} keys={loveObjKeys} groupTitle="Things I Love"/>
-                <InfoCardGroup data={aboutObj} keys={doneObjKeys} groupTitle="Things I've Done"/>
-                <InfoCardGroup data={aboutObj} keys={wantObjKeys} groupTitle="Things I Want"/>
+            <div id="about-content">
+                <InfoCardGroup data={aboutObj} keys={loveObjKeys} groupTitle="Things I Love" id="ic-group-love" bkgColor="#ffcdd2"/>
+                <InfoCardGroup data={aboutObj} keys={doneObjKeys} groupTitle="Things I've Done" id="ic-group-done" bkgColor="#C8E6C9"/>
+                <InfoCardGroup data={aboutObj} keys={wantObjKeys} groupTitle="Things I Want" id="ic-group-want" bkgColor="#BBDEFB"/>
             </div>
         )
     }
